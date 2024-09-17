@@ -77,7 +77,7 @@ app.post('/api/persons', (request, response) => {
       error: 'number is missing'
     });
 
-  if (persons.filter(p => p.name === body.name))
+  if (persons.find(p => p.name === body.name))
     return response.status(400).json({
       error: 'name must be unique'
     });
